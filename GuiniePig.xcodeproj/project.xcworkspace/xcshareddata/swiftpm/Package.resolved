@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "NavHelper",
+        "repositoryURL": "https://github.com/BalazsSzamody/NavHelper",
+        "state": {
+          "branch": null,
+          "revision": "4b5bae3b7ec5e3009897b121aa23ec73524aee6b",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
