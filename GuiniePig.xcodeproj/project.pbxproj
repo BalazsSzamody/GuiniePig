@@ -28,6 +28,8 @@
 		1B58E9B6242417C100C08A1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B58E9B4242417C100C08A1A /* LaunchScreen.storyboard */; };
 		1B58E9C92425796200C08A1A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58E9C72425796200C08A1A /* TestView.swift */; };
 		1B58E9CA2425796200C08A1A /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B58E9C82425796200C08A1A /* TestView.xib */; };
+		1B6D11722519F54C00DB98DA /* Publisher+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D11712519F54C00DB98DA /* Publisher+ViewState.swift */; };
+		1B6D11762519F67300DB98DA /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D11752519F67300DB98DA /* ViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		1B58E9B7242417C100C08A1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B58E9C72425796200C08A1A /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		1B58E9C82425796200C08A1A /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		1B6D11712519F54C00DB98DA /* Publisher+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ViewState.swift"; sourceTree = "<group>"; };
+		1B6D11752519F67300DB98DA /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				1B10B3D32517681600D60B17 /* UIKitExtensions+Configurable.swift */,
+				1B6D11712519F54C00DB98DA /* Publisher+ViewState.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			children = (
 				1B58601F2514AB5100C6BDE2 /* Repository.swift */,
 				1B10B3C625175D3900D60B17 /* NavHelper.swift */,
+				1B6D11752519F67300DB98DA /* ViewState.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				1B10B3D42517681600D60B17 /* UIKitExtensions+Configurable.swift in Sources */,
 				1B10B3C725175D3900D60B17 /* NavHelper.swift in Sources */,
 				1B58E9C92425796200C08A1A /* TestView.swift in Sources */,
+				1B6D11722519F54C00DB98DA /* Publisher+ViewState.swift in Sources */,
 				1B10B3CC2517661400D60B17 /* DetailViewModel.swift in Sources */,
 				1B10B3E22518061700D60B17 /* AddEditViewModel.swift in Sources */,
 				1B58E9AE242417BF00C08A1A /* ListViewController.swift in Sources */,
@@ -260,6 +267,7 @@
 				1B10B3AF2514B48700D60B17 /* World.swift in Sources */,
 				1B10B3E525180ADA00D60B17 /* InputView.swift in Sources */,
 				1B5860202514AB5100C6BDE2 /* Repository.swift in Sources */,
+				1B6D11762519F67300DB98DA /* ViewState.swift in Sources */,
 				1B10B3C325175CF300D60B17 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

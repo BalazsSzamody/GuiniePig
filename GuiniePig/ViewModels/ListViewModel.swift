@@ -10,11 +10,12 @@ import UIKit
 import Combine
 
 protocol ListViewModel: ViewModelBase {
-    var viewUpdated: AnyPublisher<Void, Never> { get }
     var title: String? { get }
     var count: String? { get }
     var items: [TestDisplayable] { get }
+    var customError: Error? { get }
     func prepareDetailVC(_ vc: DetailViewController, for indexPath: IndexPath)
+    func refresh()
 }
 
 class ListViewModelImp: ViewModelBaseImp {
@@ -23,6 +24,7 @@ class ListViewModelImp: ViewModelBaseImp {
     private let viewUpdateTrigger = PassthroughSubject<Void, Never>()
     
     var items: [TestDisplayable] = []
+    var customError: Error?
     
     init(repository: Repository = Current.repository) {
         self.repository = repository
@@ -33,15 +35,16 @@ class ListViewModelImp: ViewModelBaseImp {
             // This `map` is necessary to be able to use the abstract type of the model
             // We have to do our best to avoid using the concrete type in the ViewModel
             .map({ $0 })
-            .catch {[weak self] (error) -> AnyPublisher<[TestDisplayable], Never> in
-                self?._error.value = error
-                return Just([])
-                    .eraseToAnyPublisher()
-            }
             .sink(receiveValue: { [weak self] in
                 self?.items = $0
+                self?._viewState.value = .success
             })
             .store(in: &disposeBag)
+    }
+    
+    override var errorFilter: (Error?) -> Bool {
+        {
+            $0 is StandardError }
     }
 }
 
@@ -66,4 +69,16 @@ extension ListViewModelImp: ListViewModel {
         viewModel.setItemId(items[indexPath.row].id)
         vc.viewModel = viewModel
     }
+    
+    func refresh() {
+        repository
+            .refreshListItems()
+            .filterError(filter: { [weak self] in
+                !(self?.errorFilter($0) ?? true )
+            })
+            .handleViewState(in: self)
+            .sink(receiveValue: {})
+            .store(in: &disposeBag)
+    }
 }
+

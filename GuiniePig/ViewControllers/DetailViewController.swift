@@ -31,7 +31,6 @@ class DetailViewController: UIViewController {
         navigationItem.title = viewModel.detailItem?.detailTitle
         quoteLabel.text = viewModel.detailItem?.detailQuote
         authorLabel.text = viewModel.detailItem?.detailAuthor
-        view.backgroundColor = viewModel.detailItem?.detailBGColor?.withAlphaComponent(0.5)
     }
 
     @IBAction func editDidTap(_ sender: Any) {

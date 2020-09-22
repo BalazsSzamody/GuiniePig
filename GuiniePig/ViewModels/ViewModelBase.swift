@@ -12,40 +12,42 @@ import Combine
 typealias DisposeBag = Set<AnyCancellable>
 
 protocol ViewModelBase: AnyObject {
+    var viewState: AnyPublisher<ViewState, Never> { get }
     var disposeBag: DisposeBag { get set }
-    var isLoading: AnyPublisher<Bool, Never> { get }
-    var error: AnyPublisher<Error?, Never> { get }
 }
 
 class ViewModelBaseImp: ViewModelBase {
     var disposeBag = DisposeBag()
     
-    let _isLoading = CurrentValueSubject<Bool, Never>(false)
-    let _error = CurrentValueSubject<Error?, Never>(nil)
+    let _viewState = CurrentValueSubject<ViewState, Never>(.success)
     
-    var isLoading: AnyPublisher<Bool, Never> {
-        _isLoading
-            .subscribe(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }
-    
-    var error: AnyPublisher<Error?, Never> {
-        _error
+    var viewState: AnyPublisher<ViewState, Never> {
+        _viewState
             .subscribe(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     
     // Override this for error filtering
-    var errorFilter: (Error?) -> Bool = { _ in
-        return true
+    var errorFilter: (Error?) -> Bool {
+        { _ in
+            return true
+        }
     }
     
     init() {
-        error
-            .filter({ $0 != nil })
+        viewState
+            .compactMap({
+                guard case let .failure(error) = $0 else {
+                    return nil
+                }
+                return error
+            })
             .filter(errorFilter)
+            .compactMap({ $0 })
+            .eraseToAnyPublisher()
+//            .subscribe(on: DispatchQueue.main)
             .sink(receiveValue: {
-                let alert = UIAlertController(title: "Error", message: $0?.localizedDescription, preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: $0.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                 UIApplication
                     .shared
