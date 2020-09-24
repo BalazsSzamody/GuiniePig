@@ -13,7 +13,6 @@
 		1B10B3C725175D3900D60B17 /* NavHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B3C625175D3900D60B17 /* NavHelper.swift */; };
 		1B10B3CC2517661400D60B17 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B3CB2517661400D60B17 /* DetailViewModel.swift */; };
 		1B10B3D0251767D500D60B17 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B3CF251767D500D60B17 /* ViewModelBase.swift */; };
-		1B10B3D42517681600D60B17 /* UIKitExtensions+Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B3D32517681600D60B17 /* UIKitExtensions+Configurable.swift */; };
 		1B10B3DF2518060400D60B17 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B3DE2518060400D60B17 /* AddEditViewController.swift */; };
 		1B10B3E22518061700D60B17 /* AddEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B3E12518061700D60B17 /* AddEditViewModel.swift */; };
 		1B10B3E525180ADA00D60B17 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B3E425180ADA00D60B17 /* InputView.swift */; };
@@ -28,6 +27,7 @@
 		1B58E9B6242417C100C08A1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B58E9B4242417C100C08A1A /* LaunchScreen.storyboard */; };
 		1B58E9C92425796200C08A1A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58E9C72425796200C08A1A /* TestView.swift */; };
 		1B58E9CA2425796200C08A1A /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B58E9C82425796200C08A1A /* TestView.xib */; };
+		1B6075D4251CCE4F007CBB69 /* Configurable in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6075D3251CCE4F007CBB69 /* Configurable */; };
 		1B6D11722519F54C00DB98DA /* Publisher+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D11712519F54C00DB98DA /* Publisher+ViewState.swift */; };
 		1B6D11762519F67300DB98DA /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D11752519F67300DB98DA /* ViewState.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +38,6 @@
 		1B10B3C625175D3900D60B17 /* NavHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavHelper.swift; sourceTree = "<group>"; };
 		1B10B3CB2517661400D60B17 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		1B10B3CF251767D500D60B17 /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
-		1B10B3D32517681600D60B17 /* UIKitExtensions+Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKitExtensions+Configurable.swift"; sourceTree = "<group>"; };
 		1B10B3DE2518060400D60B17 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		1B10B3E12518061700D60B17 /* AddEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewModel.swift; sourceTree = "<group>"; };
 		1B10B3E425180ADA00D60B17 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B10B3BB25171F8000D60B17 /* NavHelper in Frameworks */,
+				1B6075D4251CCE4F007CBB69 /* Configurable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,6 @@
 		1B10B3D22517680300D60B17 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1B10B3D32517681600D60B17 /* UIKitExtensions+Configurable.swift */,
 				1B6D11712519F54C00DB98DA /* Publisher+ViewState.swift */,
 			);
 			path = Extension;
@@ -191,6 +190,7 @@
 			name = GuiniePig;
 			packageProductDependencies = (
 				1B10B3BA25171F8000D60B17 /* NavHelper */,
+				1B6075D3251CCE4F007CBB69 /* Configurable */,
 			);
 			productName = GuiniePig;
 			productReference = 1B58E9A6242417BF00C08A1A /* GuiniePig.app */;
@@ -222,6 +222,7 @@
 			mainGroup = 1B58E99D242417BF00C08A1A;
 			packageReferences = (
 				1B10B3B925171F8000D60B17 /* XCRemoteSwiftPackageReference "NavHelper" */,
+				1B6075D2251CCE4F007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */,
 			);
 			productRefGroup = 1B58E9A7242417BF00C08A1A /* Products */;
 			projectDirPath = "";
@@ -254,7 +255,6 @@
 			files = (
 				1B10B3D0251767D500D60B17 /* ViewModelBase.swift in Sources */,
 				1B58601D2514AB3E00C6BDE2 /* ListViewModel.swift in Sources */,
-				1B10B3D42517681600D60B17 /* UIKitExtensions+Configurable.swift in Sources */,
 				1B10B3C725175D3900D60B17 /* NavHelper.swift in Sources */,
 				1B58E9C92425796200C08A1A /* TestView.swift in Sources */,
 				1B6D11722519F54C00DB98DA /* Publisher+ViewState.swift in Sources */,
@@ -478,6 +478,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		1B6075D2251CCE4F007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:BalazsSzamody/FFConfigurableView.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,6 +493,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B10B3B925171F8000D60B17 /* XCRemoteSwiftPackageReference "NavHelper" */;
 			productName = NavHelper;
+		};
+		1B6075D3251CCE4F007CBB69 /* Configurable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B6075D2251CCE4F007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */;
+			productName = Configurable;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

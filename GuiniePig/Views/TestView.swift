@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Configurable
 
 struct TestItem: Identifiable {
     var id: String = UUID().uuidString

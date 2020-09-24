@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Configurable
 
 protocol InputViewDisplayable: Displayable {
     var inputTitle: String { get }
