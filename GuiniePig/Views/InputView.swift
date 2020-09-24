@@ -9,7 +9,7 @@
 import UIKit
 import Configurable
 
-protocol InputViewDisplayable: Displayable {
+protocol InputViewDisplayable {
     var inputTitle: String { get }
     var inputText: String? { get }
 }
@@ -21,6 +21,8 @@ protocol InputDelegate: AnyObject {
 class InputView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    
+    var data: InputViewDisplayable?
     
     weak var delegate: InputDelegate?
     
@@ -35,5 +37,13 @@ class InputView: UIView {
     
     @objc private func textFieldValueDidChange(_ sender: UITextField) {
         delegate?.valueChanged(in: self, newValue: sender.text)
+    }
+}
+
+extension InputView: Configurable {
+    typealias Displayable = InputViewDisplayable
+    
+    func configure(with displayable: Displayable) {
+        data = displayable
     }
 }
