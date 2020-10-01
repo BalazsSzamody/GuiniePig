@@ -42,17 +42,17 @@ class ListViewModelImp: ViewModelBaseImp {
             .store(in: &disposeBag)
     }
     
-    override var errorFilter: (Error?) -> Bool {
-        {
-            $0 is StandardError }
-    }
+//    override var errorFilter: (Error?) -> Bool {
+//        {
+//            $0 is StandardError }
+//    }
 }
 
 extension ListViewModelImp: ListViewModel {
     
     var viewUpdated: AnyPublisher<Void, Never> {
         viewUpdateTrigger
-            .subscribe(on: DispatchQueue.main)
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     
@@ -73,12 +73,8 @@ extension ListViewModelImp: ListViewModel {
     func refresh() {
         repository
             .refreshListItems()
-            .filterError(filter: { [weak self] in
-                !(self?.errorFilter($0) ?? true )
-            })
             .handleViewState(in: self)
             .sink(receiveValue: {})
             .store(in: &disposeBag)
     }
 }
-

@@ -19,6 +19,10 @@ struct World {
         ListViewModelImp()
     }
     
+    lazy var addEditViewModel: (AddEditRepository) -> AddEditViewModel = { repository in
+        AddEditViewModelImp(repository: repository)
+    }
+    
     var detailViewModel: () -> DetailViewModel = {
         DetailViewModelImp()
     }

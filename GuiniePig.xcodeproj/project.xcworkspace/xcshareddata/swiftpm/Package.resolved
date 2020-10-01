@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "FFConfigurableView",
-        "repositoryURL": "git@github.com:BalazsSzamody/FFConfigurableView.git",
+        "repositoryURL": "https://github.com/fr3qfly/FFConfigurableView",
         "state": {
           "branch": null,
-          "revision": "bd9030054e7171217e2354c7f22176a4f544ce2b",
-          "version": "0.0.3"
+          "revision": "f97417166904250f6eacc12fae5610c060e92160",
+          "version": "0.0.4"
         }
       },
       {

@@ -12,11 +12,13 @@ import NavHelper
 enum VCDetails: ViewControllerDetails {
     case mainNavigation
     case detail
+    case addEdit
     
     var storyboard: String {
         switch self {
         case .mainNavigation,
-             .detail:
+             .detail,
+             .addEdit:
             return "Main"
         }
     }
@@ -27,6 +29,8 @@ enum VCDetails: ViewControllerDetails {
             return UINavigationController.self
         case .detail:
             return DetailViewController.self
+        case .addEdit:
+            return AddEditViewController.self
         }
     }
 }

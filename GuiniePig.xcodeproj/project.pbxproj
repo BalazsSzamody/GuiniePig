@@ -27,10 +27,22 @@
 		1B58E9B6242417C100C08A1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B58E9B4242417C100C08A1A /* LaunchScreen.storyboard */; };
 		1B58E9C92425796200C08A1A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58E9C72425796200C08A1A /* TestView.swift */; };
 		1B58E9CA2425796200C08A1A /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B58E9C82425796200C08A1A /* TestView.xib */; };
-		1B6075D4251CCE4F007CBB69 /* Configurable in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6075D3251CCE4F007CBB69 /* Configurable */; };
+		1B6075E0251D9A77007CBB69 /* GuiniePigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6075DF251D9A77007CBB69 /* GuiniePigTests.swift */; };
+		1B6075EA251D9AD8007CBB69 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6075E9251D9AD8007CBB69 /* TestView.xib */; };
+		1B6075FC251DED0A007CBB69 /* Configurable in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6075FB251DED0A007CBB69 /* Configurable */; };
 		1B6D11722519F54C00DB98DA /* Publisher+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D11712519F54C00DB98DA /* Publisher+ViewState.swift */; };
 		1B6D11762519F67300DB98DA /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6D11752519F67300DB98DA /* ViewState.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B6075E2251D9A77007CBB69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B58E99E242417BF00C08A1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B58E9A5242417BF00C08A1A;
+			remoteInfo = GuiniePig;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1B10B3AE2514B48700D60B17 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
@@ -42,6 +54,7 @@
 		1B10B3E12518061700D60B17 /* AddEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewModel.swift; sourceTree = "<group>"; };
 		1B10B3E425180ADA00D60B17 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		1B10B3E725180AE800D60B17 /* InputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputView.xib; sourceTree = "<group>"; };
+		1B17814B251E044200D3628C /* FFConfigurableView */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FFConfigurableView; path = "../../@Fr3qFly/FFConfigurableView"; sourceTree = "<group>"; };
 		1B58601C2514AB3E00C6BDE2 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		1B58601F2514AB5100C6BDE2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		1B58E9A6242417BF00C08A1A /* GuiniePig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuiniePig.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +67,10 @@
 		1B58E9B7242417C100C08A1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B58E9C72425796200C08A1A /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		1B58E9C82425796200C08A1A /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		1B6075DD251D9A77007CBB69 /* GuiniePigTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuiniePigTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B6075DF251D9A77007CBB69 /* GuiniePigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuiniePigTests.swift; sourceTree = "<group>"; };
+		1B6075E1251D9A77007CBB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B6075E9251D9AD8007CBB69 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		1B6D11712519F54C00DB98DA /* Publisher+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ViewState.swift"; sourceTree = "<group>"; };
 		1B6D11752519F67300DB98DA /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +81,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B10B3BB25171F8000D60B17 /* NavHelper in Frameworks */,
-				1B6075D4251CCE4F007CBB69 /* Configurable in Frameworks */,
+				1B6075FC251DED0A007CBB69 /* Configurable in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6075DA251D9A77007CBB69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +165,9 @@
 		1B58E99D242417BF00C08A1A = {
 			isa = PBXGroup;
 			children = (
+				1B17814B251E044200D3628C /* FFConfigurableView */,
 				1B58E9A8242417BF00C08A1A /* GuiniePig */,
+				1B6075DE251D9A77007CBB69 /* GuiniePigTests */,
 				1B58E9A7242417BF00C08A1A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				1B58E9A6242417BF00C08A1A /* GuiniePig.app */,
+				1B6075DD251D9A77007CBB69 /* GuiniePigTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +199,16 @@
 			path = GuiniePig;
 			sourceTree = "<group>";
 		};
+		1B6075DE251D9A77007CBB69 /* GuiniePigTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B6075E9251D9AD8007CBB69 /* TestView.xib */,
+				1B6075DF251D9A77007CBB69 /* GuiniePigTests.swift */,
+				1B6075E1251D9A77007CBB69 /* Info.plist */,
+			);
+			path = GuiniePigTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,11 +227,29 @@
 			name = GuiniePig;
 			packageProductDependencies = (
 				1B10B3BA25171F8000D60B17 /* NavHelper */,
-				1B6075D3251CCE4F007CBB69 /* Configurable */,
+				1B6075FB251DED0A007CBB69 /* Configurable */,
 			);
 			productName = GuiniePig;
 			productReference = 1B58E9A6242417BF00C08A1A /* GuiniePig.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1B6075DC251D9A77007CBB69 /* GuiniePigTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B6075E4251D9A77007CBB69 /* Build configuration list for PBXNativeTarget "GuiniePigTests" */;
+			buildPhases = (
+				1B6075D9251D9A77007CBB69 /* Sources */,
+				1B6075DA251D9A77007CBB69 /* Frameworks */,
+				1B6075DB251D9A77007CBB69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B6075E3251D9A77007CBB69 /* PBXTargetDependency */,
+			);
+			name = GuiniePigTests;
+			productName = GuiniePigTests;
+			productReference = 1B6075DD251D9A77007CBB69 /* GuiniePigTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -202,12 +257,16 @@
 		1B58E99E242417BF00C08A1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Balázs Szamódy";
 				TargetAttributes = {
 					1B58E9A5242417BF00C08A1A = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					1B6075DC251D9A77007CBB69 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 1B58E9A5242417BF00C08A1A;
 					};
 				};
 			};
@@ -222,13 +281,14 @@
 			mainGroup = 1B58E99D242417BF00C08A1A;
 			packageReferences = (
 				1B10B3B925171F8000D60B17 /* XCRemoteSwiftPackageReference "NavHelper" */,
-				1B6075D2251CCE4F007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */,
+				1B6075FA251DED0A007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */,
 			);
 			productRefGroup = 1B58E9A7242417BF00C08A1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1B58E9A5242417BF00C08A1A /* GuiniePig */,
+				1B6075DC251D9A77007CBB69 /* GuiniePigTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +303,14 @@
 				1B58E9B1242417BF00C08A1A /* Main.storyboard in Resources */,
 				1B58E9CA2425796200C08A1A /* TestView.xib in Resources */,
 				1B10B3E825180AE800D60B17 /* InputView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B6075DB251D9A77007CBB69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6075EA251D9AD8007CBB69 /* TestView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +340,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B6075D9251D9A77007CBB69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6075E0251D9A77007CBB69 /* GuiniePigTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B6075E3251D9A77007CBB69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B58E9A5242417BF00C08A1A /* GuiniePig */;
+			targetProxy = 1B6075E2251D9A77007CBB69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B58E9AF242417BF00C08A1A /* Main.storyboard */ = {
@@ -446,6 +530,48 @@
 			};
 			name = Release;
 		};
+		1B6075E5251D9A77007CBB69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWUE9JZKY9;
+				INFOPLIST_FILE = GuiniePigTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fr3qfly.GuiniePigTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuiniePig.app/GuiniePig";
+			};
+			name = Debug;
+		};
+		1B6075E6251D9A77007CBB69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWUE9JZKY9;
+				INFOPLIST_FILE = GuiniePigTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fr3qfly.GuiniePigTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuiniePig.app/GuiniePig";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -467,6 +593,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1B6075E4251D9A77007CBB69 /* Build configuration list for PBXNativeTarget "GuiniePigTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B6075E5251D9A77007CBB69 /* Debug */,
+				1B6075E6251D9A77007CBB69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -478,12 +613,12 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		1B6075D2251CCE4F007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */ = {
+		1B6075FA251DED0A007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:BalazsSzamody/FFConfigurableView.git";
+			repositoryURL = "https://github.com/fr3qfly/FFConfigurableView";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.0.1;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -494,9 +629,9 @@
 			package = 1B10B3B925171F8000D60B17 /* XCRemoteSwiftPackageReference "NavHelper" */;
 			productName = NavHelper;
 		};
-		1B6075D3251CCE4F007CBB69 /* Configurable */ = {
+		1B6075FB251DED0A007CBB69 /* Configurable */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1B6075D2251CCE4F007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */;
+			package = 1B6075FA251DED0A007CBB69 /* XCRemoteSwiftPackageReference "FFConfigurableView" */;
 			productName = Configurable;
 		};
 /* End XCSwiftPackageProductDependency section */

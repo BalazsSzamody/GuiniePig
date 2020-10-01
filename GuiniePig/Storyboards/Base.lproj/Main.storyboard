@@ -33,7 +33,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="KSO-bG-VcR">
                         <barButtonItem key="leftBarButtonItem" enabled="NO" title="Item" id="udx-Sy-hFC"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="PcX-j1-3YK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="PcX-j1-3YK">
+                            <connections>
+                                <action selector="addDidTap:" destination="BYZ-38-t0r" id="qC0-Pv-Iqs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="U0w-Wj-F0X" id="Lac-Lz-HNC"/>
@@ -46,7 +50,7 @@
         <!--Add Edit View Controller-->
         <scene sceneID="5gq-mF-nH4">
             <objects>
-                <viewController id="upX-x6-FSF" customClass="AddEditViewController" customModule="GuiniePig" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEditViewController" id="upX-x6-FSF" customClass="AddEditViewController" customModule="GuiniePig" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qk1-nN-T1n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,15 +81,20 @@
                                                     <action selector="saveDidTap:" destination="upX-x6-FSF" eventType="touchUpInside" id="4Vm-5t-GNt"/>
                                                 </connections>
                                             </button>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="qyh-K5-wAZ">
+                                                <rect key="frame" x="379" y="13" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="llg-jj-Vei" firstAttribute="leading" secondItem="0Ng-51-ywc" secondAttribute="leading" constant="15" id="Bdg-cw-qXv"/>
                                             <constraint firstItem="Exr-lo-F4f" firstAttribute="centerY" secondItem="0Ng-51-ywc" secondAttribute="centerY" id="GB3-rZ-d6m"/>
                                             <constraint firstAttribute="height" constant="44" id="Iyz-E8-ptr"/>
+                                            <constraint firstItem="qyh-K5-wAZ" firstAttribute="centerX" secondItem="Exr-lo-F4f" secondAttribute="centerX" id="b0y-Di-x25"/>
                                             <constraint firstItem="Gsv-Ty-cWL" firstAttribute="centerY" secondItem="0Ng-51-ywc" secondAttribute="centerY" id="gFw-6q-Yso"/>
                                             <constraint firstItem="Gsv-Ty-cWL" firstAttribute="centerX" secondItem="0Ng-51-ywc" secondAttribute="centerX" id="gUm-VY-3Ml"/>
                                             <constraint firstItem="llg-jj-Vei" firstAttribute="centerY" secondItem="0Ng-51-ywc" secondAttribute="centerY" id="mPa-fJ-pe9"/>
+                                            <constraint firstItem="qyh-K5-wAZ" firstAttribute="centerY" secondItem="Exr-lo-F4f" secondAttribute="centerY" id="nCZ-oA-Yf1"/>
                                             <constraint firstAttribute="trailing" secondItem="Exr-lo-F4f" secondAttribute="trailing" constant="15" id="s5X-OH-z4n"/>
                                         </constraints>
                                     </view>
@@ -115,6 +124,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="qyh-K5-wAZ" id="AZ7-y0-YjS"/>
                         <outlet property="saveButton" destination="Exr-lo-F4f" id="Mwd-l8-pc8"/>
                         <outlet property="titleLabel" destination="Gsv-Ty-cWL" id="8mk-MK-rc2"/>
                     </connections>
@@ -148,6 +158,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-Ho-WGv">
+                                <rect key="frame" x="87" y="500" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y2D-yo-KVB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -169,6 +184,7 @@
                     <connections>
                         <outlet property="authorLabel" destination="Dkj-zL-KK4" id="VRI-AN-1fw"/>
                         <outlet property="quoteLabel" destination="bxZ-R5-k78" id="nxC-ps-KCy"/>
+                        <outlet property="testView" destination="wqc-Ho-WGv" id="p55-mA-7pf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3AF-HP-Jch" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

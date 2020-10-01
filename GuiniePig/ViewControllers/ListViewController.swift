@@ -33,19 +33,18 @@ class ListViewController: UIViewController {
     private func bindViewModel() {
         viewModel
             .viewState
-//            .subscribe(on: DispatchQueue.main)
-            .sink(receiveValue: { viewState in
-                DispatchQueue.main.async { [weak self] in
+            .sink(receiveValue: { [weak self] viewState in
                     self?.handleLoading(for: viewState)
                     switch viewState {
                     case .success:
                         self?.updateViews()
-                    case let .failure(error as CustomHandledError) :
-                        self?.handleCustomError(error)
+                    case let .failure(error as LocalizedError) :
+                        self?.handleCustomError(error, completion: {
+                            self?.viewModel.refresh()
+                        })
                     default:
                         break
                     }
-                }
             })
             .store(in: &viewModel.disposeBag)
     }
@@ -72,13 +71,16 @@ class ListViewController: UIViewController {
         }
     }
     
-    private func handleCustomError(_ error: CustomHandledError) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: {[weak self] _ in
-            self?.viewModel.refresh()
-        }))
-        
-        present(alert, animated: true, completion: nil)
+    @IBAction func addDidTap(_ sender: Any) {
+        navHelper
+            .present(VCDetails.addEdit,
+                     type: AddEditViewController.self,
+                     over: self,
+                     animated: true, beforeLoad: { (vc) in
+                        vc.modalPresentationStyle = .fullScreen
+                        vc.viewModel = Current.addEditViewModel(Current.repository)
+                     },
+                     completion: nil)
     }
     
     @objc private func refresh(_ sender: UIRefreshControl) {
@@ -105,5 +107,18 @@ extension ListViewController: UITableViewDelegate {
         show(VCDetails.detail, type: DetailViewController.self, beforeLoad: { [weak self] vc in
             self?.viewModel.prepareDetailVC(vc, for: indexPath)
         })
+    }
+}
+
+extension UIViewController {
+    func handleCustomError(_ error: LocalizedError, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { _ in
+            if error is CustomHandledError {
+                completion?()
+            }
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 }
